@@ -23,9 +23,16 @@ button{
     width: 100px;
     margin-bottom: 10px;
 }
+
+#images{
+    display: flex;
+    width: 300px;
+    overflow-x: scroll;
+}
 #images *{
     width: 50px;
 }
+
 .haiku-wrap{
     display: flex;
     width: 600px;
