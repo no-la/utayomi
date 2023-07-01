@@ -15,7 +15,10 @@ function set_images(){
         img_element.src = `image/${(i+1).toString().padStart(2, "0")}.png`;
         images.appendChild(img_element);
         //イベント
-        img_element.addEventListener("click", () => num = i+1);
+        img_element.addEventListener("click", (event) => {
+            num = parseInt(event.target.id.split("-")[1]);
+            update_cvs();
+        });
     }
 }
 function cvs_to_image()
