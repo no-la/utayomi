@@ -1,4 +1,6 @@
 body{
+    width: 500px;
+    height: auto;
     padding: 30px 20px;
 }
 .input-area{
