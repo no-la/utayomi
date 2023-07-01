@@ -35,7 +35,7 @@ function update_cvs(){
     text = input_text.value;
     name = input_name.value;
     
-    ctx.fillStyle = num==4? "white": "black";
+    ctx.fillStyle = num==4? "white": "#101010";
 
     //本文
     //座標や行間の設定
