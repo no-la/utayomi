@@ -6,6 +6,7 @@ body{
     width: 300px;
     height: auto;
     flex-flow: column;
+    align-items: center;
 }
 textarea{
     resize: none;
@@ -18,3 +19,16 @@ input{
     height: 24px;
     margin-bottom: 10px;
 }
+button{
+    width: 100px;
+    margin-bottom: 10px;
+}
+#images *{
+    width: 50px;
+}
+.haiku-wrap{
+    display: flex;
+    width: 600px;
+    height: 500px;
+}
+
