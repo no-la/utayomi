@@ -31,4 +31,7 @@ button{
     width: 600px;
     height: 500px;
 }
+#canvas{
+    display: none;
+}
 
