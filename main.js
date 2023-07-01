@@ -4,7 +4,7 @@ const cvs = document.getElementById("canvas");
 const ctx = cvs.getContext("2d");
 const images = document.getElementById("images");
 const send_button = document.getElementById("send-button");
-const img_num = 8;
+const img_num = 11;
 num = Math.ceil(Math.random()*img_num);
 
 function set_images(){
@@ -40,7 +40,7 @@ function update_cvs(){
     text = input_text.value;
     name = input_name.value;
     
-    ctx.fillStyle = num==4? "white": "#101010";
+    ctx.fillStyle = num in [4, 9]? "white": "#101010";
 
     //本文
     //座標や行間の設定
