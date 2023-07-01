@@ -40,7 +40,7 @@ function update_cvs(){
     text = input_text.value;
     name = input_name.value;
     
-    ctx.fillStyle = num in [4, 9]? "white": "#101010";
+    ctx.fillStyle = num == 4 || num == 9 || num == 10? "white": "#101010";
 
     //本文
     //座標や行間の設定
