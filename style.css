@@ -1,0 +1,20 @@
+body{
+    padding: 30px 20px;
+}
+.input-area{
+    display: flex;
+    width: 300px;
+    height: auto;
+    flex-flow: column;
+}
+textarea{
+    resize: none;
+    width: 250px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+input{
+    width: 200px;
+    height: 24px;
+    margin-bottom: 10px;
+}
