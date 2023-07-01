@@ -14,6 +14,8 @@ function set_images(){
         img_element.id = `img-${i+1}`;
         img_element.src = `image/${(i+1).toString().padStart(2, "0")}.png`;
         images.appendChild(img_element);
+        //イベント
+        img_element.addEventListener("click", () => num = i+1);
     }
 }
 function cvs_to_image()
