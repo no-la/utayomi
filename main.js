@@ -79,13 +79,13 @@ function update_cvs(){
     }
 
     //名前
-    font_size = 24;
-    ctx.font = `${font_size}px serif`;
+    name_font_size = 24;
+    ctx.font = `${name_font_size}px serif`;
 
     name_pos = [20, cvs.height-50];
     for (i=0; i<name.length; i++){
         draw_character(name.substr(name.length-i-1, 1), name_pos[0], name_pos[1]);
-        name_pos[1] -= font_size;
+        name_pos[1] -= name_font_size;
     }
 
     //imageに変換
