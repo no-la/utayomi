@@ -5,6 +5,10 @@ const ctx = cvs.getContext("2d");
 const images = document.getElementById("images");
 const send_button = document.getElementById("send-button");
 const img_num = 14;
+const rotate_characters = ["ー", "～", "（", "）", "(", ")", "「", "」", "｛", "｝"];
+const leftbottome_characters = ["、", "。"];
+const small_characters = ["ぁ", "ぃ", "ぅ", "ぇ", "ぉ", "ゃ", "ゅ", "ょ", "っ"];
+const font_size = 30;
 num = Math.ceil(Math.random()*img_num);
 
 function set_images(){
@@ -33,13 +37,28 @@ function init_cvs(){
     console.log("背景描画")
 }
 
+function draw_character(char, x, y){
+    if (rotate_characters.includes(char)){
+        draw_rotate_character();
+    }else if (leftbottome_characters.includes(char)){
+        ctx.fillText(char, x+font_size*0.55, y-font_size*0.5);
+    }else if (small_characters.includes(char)){
+        ctx.fillText(char, x+font_size*0.1, y-font_size*0.15);
+    }else{
+        ctx.fillText(char, x, y);
+    }
+
+    function draw_rotate_character(){
+        ctx.rotate(Math.PI/2);
+        ctx.fillText(char, y-font_size*0.85, -x-font_size*0.165);
+        ctx.rotate(-Math.PI/2);
+    }
+}
 function update_cvs(){
     init_cvs();
-    font_size = 30;
     ctx.font = `${font_size}px serif`;
     text = input_text.value;
     name = input_name.value;
-    
     ctx.fillStyle = num == 4 || num == 9 || num == 10 || num == 14? "white": "#101010";
 
     //本文
@@ -48,7 +67,7 @@ function update_cvs(){
     y_start = 140;
     text_pos = [cvs.width/2 + (((text.match(/\n/g) || []).length)*line_width-font_size)/2, y_start];
     for (i=0; i<text.length; i++){
-        ctx.fillText(text.substr(i, 1), text_pos[0], text_pos[1]);
+        draw_character(text.substr(i, 1), text_pos[0], text_pos[1]);
 
         //次の座標をセットする
         if (text.substr(i, 1) == "\n"){
@@ -65,7 +84,7 @@ function update_cvs(){
 
     name_pos = [20, cvs.height-50];
     for (i=0; i<name.length; i++){
-        ctx.fillText(name.substr(name.length-i-1, 1), name_pos[0], name_pos[1]);
+        draw_character(name.substr(name.length-i-1, 1), name_pos[0], name_pos[1]);
         name_pos[1] -= font_size;
     }
 
