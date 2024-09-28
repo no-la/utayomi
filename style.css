@@ -1,7 +1,12 @@
 body{
+    display: flex;
+    justify-content: center;
+}
+main {
     width: 500px;
-    height: auto;
-    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .input-area{
     display: flex;
@@ -37,6 +42,7 @@ button{
 
 .haiku-wrap{
     display: flex;
+    justify-content: center;
     width: 600px;
     height: 500px;
 }
